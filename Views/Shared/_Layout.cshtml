@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Healthcare Analytics</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="/">Healthcare Analytics</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="strokeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Stroke rate 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="strokeDropdown">
+                            <a class="btn" href="/Home/AgeAnalysis">Age Analysis</a>
+                            <a class="btn" href="/Home/SGenderAnalysis">Gender Analysis</a>
+                            <a class="btn" href="/Home/BloodSugarAnalysis">Blood Sugar Analysis</a>
+                            <a class="btn" href="/Home/MarriageAnalysis">Marriage Analysis</a>
+                            <a class="btn" href="/Home/WorkAnalysis">Work type Analysis</a>
+                            <a class="btn" href="/Home/TensionAnalysis">Tension Analysis</a>
+                            
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="heartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Heart disease rate 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="heartDropdown">
+                            <a class="btn" href="/Home/AgeGroupAnalysis">Age Analysis</a>
+                            <a class="btn" href="/Home/BmiAnalysis">BMI Analysis</a>
+                            <a class="btn" href="/Home/DiabetesAnalysis">Diabetes Analysis</a>
+                            <a class="btn" href="/Home/SleepTimeAnalysis">Sleep Time Analysis</a>
+                            <a class="btn" href="/Home/SmokeAnalysis">Smoking Habit Analysis</a>
+                            <a class="btn" href="/Home/GenderAnalysis">Gender Analysis</a>
+                            <a class="btn" href="/Home/RaceAnalysis">Race Analysis</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="deathDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Death rates
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="deathDropdown">
+                            <a class="btn" href="/Home/DeathRateAnalysisByYear">Death Rate by Year</a>
+                            <a class="btn" href="/Home/DeathRateAnalysisByMonth">Death Rate by Month</a>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

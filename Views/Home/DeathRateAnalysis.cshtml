@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Death Rate Analysis";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width: 73%; margin: auto;">
+    <canvas id="myChart2"></canvas>
+</div>
+
+<script>
+    var monthlyChartData = @Html.Raw(ViewData["ChartData"]);
+    var ctxMonth = document.getElementById('myChart2').getContext('2d');
+    var monthlyChart = new Chart(ctxMonth, {
+        type: 'bar',
+        data: monthlyChartData,
+        options: {
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Deaths'
+                    }
+                }
+            }
+        }
+    });
+
+    var yearlyChartData = @Html.Raw(ViewData["ChartData"]);
+    var ctxYear = document.getElementById('yearlyChart1').getContext('2d');
+    var yearlyChart = new Chart(ctxYear, {
+        type: 'bar',
+        data: yearlyChartData,
+        options: {
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Years'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Deaths'
+                    }
+                }
+            }
+        }
+    });
+</script>
